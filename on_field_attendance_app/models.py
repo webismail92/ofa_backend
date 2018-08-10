@@ -40,10 +40,10 @@ class Task(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
     comment = models.CharField(max_length=100, null=True, blank=True)
     date = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
-    address = PlainLocationField(based_fields=['address'], zoom=7, null=True, blank=True)
-    location = PlainLocationField(based_fields=['location'], zoom=7, null=True, blank=True)
+    address = PlainLocationField(based_fields=['city'], zoom=7,null=True, blank=True)
+    location = PlainLocationField(based_fields=['city'], zoom=7,null=True, blank=True)
     def __str__(self):
-        return self.description
+        return self.title
 
 class Attendance(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, null=False)
@@ -52,3 +52,7 @@ class Attendance(models.Model):
     date = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
     def __str__(self):
         return self.employee + ' ' + self.attendance
+
+class Place(models.Model):
+    city = models.CharField(max_length=255)
+    location = PlainLocationField(based_fields=['city'], zoom=7)

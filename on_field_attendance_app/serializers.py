@@ -5,6 +5,11 @@ class EmployeeSrializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
         fields = "__all__"
+        
+class AttendanceSrializer(serializers.ModelSerializer):
+    class Meta:
+        model = Attendance
+        fields = "__all__"
 
 class TaskSrializer(serializers.ModelSerializer):
     details = serializers.SerializerMethodField()

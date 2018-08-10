@@ -10,6 +10,17 @@ class TaskFilters(django_filters.FilterSet):
 		fields = {
 			"assignedTo" : ["exact"],
 		}
+
+class AttendanceFilters(django_filters.FilterSet):
+	class Meta:
+		model = Attendance
+		fields = {
+			"task" : ["exact"],
+			"employee" : ["exact"],
+			"date" : ["exact"],
+			"attendance" : ["exact"],
+		}
+
 class EmployeeFilters(django_filters.FilterSet):
     class Meta:
         model = Employee

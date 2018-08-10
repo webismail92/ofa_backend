@@ -19,6 +19,13 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     serializer_class = EmployeeSrializer
     queryset = Employee.objects.all()
 
+class AttendanceViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint for login"""
+    filter_class = AttendanceFilters
+    serializer_class = AttendanceSrializer
+    queryset = Attendance.objects.all()
+
 class TaskViewSet(viewsets.ModelViewSet):
     """
     API endpoint for login"""

@@ -8,6 +8,7 @@ router = routers.DefaultRouter()
 
 router.register(r'employee', EmployeeViewSet, 'employee')
 router.register(r'task', TaskViewSet, 'task')
+router.register(r'attendance', AttendanceViewSet, 'attendance')
 
 urlpatterns = [
     path('login/',  Login.as_view(), name = 'Login'),

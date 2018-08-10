@@ -35,6 +35,7 @@ LOGIN_REDIRECT_URL = '/on_field_attendance/'
 # Application definition
 
 INSTALLED_APPS = [
+    'easy_maps',
     'location_field.apps.DefaultConfig',
     'on_field_attendance_app',
     'rest_framework',
@@ -175,7 +176,7 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
+GOOGLE_MAPS_API_KEY = 'AIzaSyBQ0MkTDL57Gw15Ru81nUIm5wxV4zA8y0g'
 # for heroku
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
